@@ -17,11 +17,17 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+    % 值得一提的是，测试样例中给的 X 矩阵有4列，而‘ex1data2.txt’文件中给的数据得到的 X 矩阵只有3列
+    % 这可以通过一个for循环解决，但是本人懒得写了，将就着用吧（逃
 
-
-
-
-
+    h = sum((theta' .* X)')';
+    % disp(h)
+    tmp1 = theta(1,:) - sum(h - y) * alpha / m; 
+    tmp2 = theta(2,:) - sum((h - y) .* X(:,2)) * alpha  / m; 
+    tmp3 = theta(3,:) - sum((h - y) .* X(:,3)) * alpha  / m;
+    tmp4 = theta(4,:) - sum((h - y) .* X(:,4)) * alpha  / m;
+    theta = [tmp1 ; tmp2 ; tmp3 ; tmp4];
+    %disp(theta)
 
 
 

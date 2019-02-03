@@ -50,6 +50,7 @@ function out = output(partId)
   X1 = [ones(20,1) (exp(1) + exp(2) * (0.1:0.1:2))'];
   Y1 = X1(:,2) + sin(X1(:,1)) + cos(X1(:,2));
   X2 = [X1 X1(:,2).^0.5 X1(:,2).^0.25];
+  % X2 = [X1 X1(:,2).^0.5 ];
   Y2 = Y1.^0.5 + Y1;
   if partId == '1'
     out = sprintf('%0.5f ', warmUpExercise());

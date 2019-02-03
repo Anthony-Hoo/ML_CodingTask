@@ -25,8 +25,9 @@ for iter = 1:num_iters
     tmp1 = theta(1,:) - sum(h - y) * alpha / m; 
     tmp2 = theta(2,:) - sum((h - y) .* X(:,2)) * alpha  / m; 
     tmp3 = theta(3,:) - sum((h - y) .* X(:,3)) * alpha  / m;
-    tmp4 = theta(4,:) - sum((h - y) .* X(:,4)) * alpha  / m;
-    theta = [tmp1 ; tmp2 ; tmp3 ; tmp4];
+    % tmp4 = theta(4,:) - sum((h - y) .* X(:,4)) * alpha  / m;
+    % theta = [tmp1 ; tmp2 ; tmp3 ; tmp4];
+    theta = [tmp1 ; tmp2 ; tmp3];
     %disp(theta)
 
 

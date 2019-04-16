@@ -62,8 +62,10 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+X = [ones(1, 400); X];
 
-
+hx = 1 + e ^- (Theta2 .* (1 + e ^- (Theta1 .* X)))
+J = (- y * log(hx) - (1 - y) * log(1 - hx))/m
 
 
 

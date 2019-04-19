@@ -62,14 +62,13 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
- X = [ones(5000, 1), X];
+%  X = [ones(5000, 1), X];
 
-hx = 1 + e .^- (Theta2 * [ones(1, 5000); (1 + e .^- (Theta1 * X'))]);
-J = sum(- y' * log(hx)' .- ((1 - y)' * log(1 - hx)')') / m;
-
-
+% hx = 1 + e .^- (Theta2 * [ones(1, 5000); (1 + e .^- (Theta1 * X'))]);
+% J = sum(- y' * log(hx)' .- ((1 - y)' * log(1 - hx)')') / m;
 
 
+m
 
 
 

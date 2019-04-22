@@ -30,6 +30,7 @@ J = 0;
 Theta1_grad = zeros(size(Theta1));
 Theta2_grad = zeros(size(Theta2));
 
+
 % ====================== YOUR CODE HERE ======================
 % Instructions: You should complete the code by working through the
 %               following parts.
@@ -64,8 +65,9 @@ Theta2_grad = zeros(size(Theta2));
 
  X = [ones(5000, 1), X];
 
-hx = 1 + e .^- (Theta2 * [ones(1, 5000); (1 + e .^- (Theta1 * X'))]);
-J = sum(- y' * log(hx)' .- ((1 - y)' * log(1 - hx)')') / m;
+hx = sigmoid(Theta2 * [ones(1, 5000); (sigmoid(Theta1 * X'))])';
+
+J = sum(sum(- y .* log(hx) - ((1 - y) .* log(1 - hx)))) / m;
 
 
 
